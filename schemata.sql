@@ -34,3 +34,15 @@ create TABLE salaries (
 
 -- FOREIGN KEY (emp_no) REFERENCES employees(emp_no),
 --  FOREIGN KEY (dept_no) REFERENCES departments(dept_no)
+
+-----------------------------------------------------
+
+-- Change dates (varchar) type to (date) type
+
+ALTER TABLE employees 
+ALTER COLUMN hire_date TYPE date 
+USING to_date(hire_date, 'mm/dd/yyyy');
+
+ALTER TABLE employees 
+ALTER COLUMN birth_date TYPE date 
+USING to_date(birth_date, 'mm/dd/yyyy');
